@@ -1,0 +1,98 @@
+<template>
+  <div>
+    <h1 class="center"><b>{{title}}</b></h1>
+    <hr />
+    <div class="content">
+      <h1>一、元素</h1>
+      <p>元素指的是从开始标签（start tag）到结束标签（end tag）的所有代码。<br>(1)HTML元素以开始标签起始、(2)HTML 元素以结束标签终止、(3)元素的内容是开始标签与结束标签之间的内容、(4)某些 HTML 元素具有空内容（empty content）、(5)空元素在开始标签中进行关闭（以开始标签的结束而结束）、(6)
+        大多数 HTML 元素可拥有属性</p>
+      <h2>2、注意事项</h2>
+      <div class="warn">
+        <p>(1)不要忘记结束标签</p>
+        <p>(2)没有内容的HTML元素被称为空元素。空元素是在开始标签中关闭的。</p>
+        <p>(3)HTML 标签对大小写不敏感，当时推荐使用小写标签。</p>
+      </div>
+      <h1>二、属性</h1>
+      <p>属性为 HTML 元素提供附加信息。属性总是以名称/值对的形式出现，比如：name="value"。属性总是在 HTML 元素的开始标签中规定。</p>
+      <h2>1、属性实例</h2>
+      <div class="code">
+        <a href="http://www.w3school.com.cn">这是一个链接</a>
+        <p align="center">这是居中文字</p>
+        <p style="background-color: #FFFF00; font-size: 20px; color:red">背景:黄色、字体大小:20px、字体颜色:红色</p>
+      </div>
+      <h2>2、注意事项</h2>
+      <div class="warn">
+        <p>(1)属性和属性值对大小写不敏感。</p>
+        <p>(2)属性值应该始终被包括在引号（单双引号）内。如果属性值本身就含有双引号，那么您必须使用单引号。</p>
+      </div>
+      <h1>三、标题</h1>
+      <p>标题（Heading）是通过 &#60;h1&#62; - &#60;h6&#62; 等标签进行定义的。&#60;h1&#62; 定义最大的标题。&#60;h6&#62; 定义最小的标题。</p>
+      <h2>1、标题实例</h2>
+      <div class="code">
+        <h1>这是一级标题</h1>
+        <h2>这是二级标题</h2>
+        <h3>这是三级标题</h3>
+        <h4>这是四级标题</h4>
+        <h5>这是五级标题</h5>
+        <h6>这是六级标题</h6>
+        <p>分割线定义用&#60;hr /&#62;,用于分隔内容。</p>
+        <hr />
+        <!--这里有个注释，但是你看不见-->
+        <p>注释提高代码可读性，不会显示在页面上：&#60;!--这是一个注释--&#62;</p>
+      </div>
+      <h1>四、段落</h1>
+      <p>段落是通过 &#60;p&#62; 标签定义的,属于块级元素。浏览器会自动地在段落的前后添加空行。</p>
+      <h2>1、段落实例</h2>
+      <div class="code">
+        <p>这是一个段落</p>
+        <p>这是二个段落</p>
+        <p>这是一个段落，<br />但是有折行的段落</p>
+      </div>
+      <h2>2、注意事项</h2>
+      <div class="warn">
+        <p>(1)&#60;br /&#62; 元素是一个空的HTML元素。尽管&#60;br&#62;也可以显示，但是推荐使用&#60;br /&#62;</p>
+        <p>(2)当显示页面时，浏览器会移除源代码中多余的空格和空行。所有连续的空格或空行都会被算作一个空格。</p>
+      </div>
+    </div>
+    <br />
+  </div>
+</template>
+<style scoped>
+.center {
+  align-items: center;
+  align-content: center;
+  text-align: center;
+}
+
+.content {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.code {
+  padding: 5px;
+  border-style: dashed;
+  border-color: #0000FF;
+  border-width: thin;
+}
+
+.warn {
+  padding: 5px;
+  border-style: solid;
+  border-color: #FF0000;
+  border-width: thin;
+}
+
+</style>
+<script>
+export default {
+  name: 'HtmlBasic1',
+  data() {
+    return {
+      title: 'HTML基础--元素、属性、标题、段落',
+
+    }
+  }
+}
+
+</script>
