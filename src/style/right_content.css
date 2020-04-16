@@ -1,0 +1,31 @@
+/*
+* @Author: zhouchao
+* @Date:   2020-04-16 14:08:57
+* @Last Modified by:   zhouchao
+* @Last Modified time: 2020-04-16 14:09:19
+*/
+
+.center {
+  align-items: center;
+  align-content: center;
+  text-align: center;
+}
+
+.content {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.code {
+  padding: 5px;
+  border-style: dashed;
+  border-color: #0000FF;
+  border-width: thin;
+}
+
+.warn {
+  padding: 5px;
+  border-style: solid;
+  border-color: #FF0000;
+  border-width: thin;
+}

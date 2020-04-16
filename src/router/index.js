@@ -8,6 +8,9 @@ import HtmlBasic1 from '@/components/html/HtmlBasic1'
 import HtmlBasic2 from '@/components/html/HtmlBasic2'
 import HtmlBasic3 from '@/components/html/HtmlBasic3'
 import HtmlBasic4 from '@/components/html/HtmlBasic4'
+import HtmlBasic5 from '@/components/html/HtmlBasic5'
+import HtmlBasic6 from '@/components/html/HtmlBasic6'
+import HtmlBasic7 from '@/components/html/HtmlBasic7'
 
 import LeftCSS from '@/components/leftbar/LeftCssBar'
 import LeftJavaScript from '@/components/leftbar/LeftJavaScriptBar'
@@ -69,6 +72,33 @@ export default new Router({
         default: TopMain,
         left: LeftHtml,
         right: HtmlBasic4
+      }
+    },
+    {
+      path: '/html/basic5',
+      name: 'HTML-Basic-5',
+      components: {
+        default: TopMain,
+        left: LeftHtml,
+        right: HtmlBasic5
+      }
+    },
+    {
+      path: '/html/basic6',
+      name: 'HTML-Basic-6',
+      components: {
+        default: TopMain,
+        left: LeftHtml,
+        right: HtmlBasic6
+      }
+    },
+    {
+      path: '/html/basic7',
+      name: 'HTML-Basic-7',
+      components: {
+        default: TopMain,
+        left: LeftHtml,
+        right: HtmlBasic7
       }
     },
     {

@@ -126,37 +126,83 @@
       </p>
       <h2>1、列表实例</h2>
       <div class="code">
+        <h3>(1)无序列表（disc模式，默认）</h3>
+        <ul type="disc">
+          <li>周超(disc,默认)</li>
+          <li>余瑞梅</li>
+          <li>小飞鱼</li>
+        </ul>
+        <h3>(2)无序列表（circle模式）</h3>
+        <ul type="circle">
+          <li>周超(circle)</li>
+          <li>余瑞梅</li>
+          <li>小飞鱼</li>
+        </ul>
+        <h3>(3)无序列表（square模式）</h3>
+        <ul type="square">
+          <li>周超(square)</li>
+          <li>余瑞梅</li>
+          <li>小飞鱼</li>
+        </ul>
+        <h3>(4)有序列表</h3>
+        <ol type="1">
+          <li>周超(类型：1，默认)</li>
+          <li>余瑞梅</li>
+          <li>小飞鱼</li>
+        </ol>
+        <ol type="A">
+          <li>周超(类型：A)</li>
+          <li>余瑞梅</li>
+          <li>小飞鱼</li>
+        </ol>
+        <ol type="a">
+          <li>周超(类型：a)</li>
+          <li>余瑞梅</li>
+          <li>小飞鱼</li>
+        </ol>
+        <ol type="i">
+          <li>周超(类型：i)</li>
+          <li>余瑞梅</li>
+          <li>小飞鱼</li>
+        </ol>
+        <ol type="I">
+          <li>周超(类型：I)</li>
+          <li>余瑞梅</li>
+          <li>小飞鱼</li>
+        </ol>
+        <h3>(5)自定义列表</h3>
+        <dl>
+          <dt>计算机</dt>
+          <dd>用来计算的仪器 ... ...</dd>
+          <dt>显示器</dt>
+          <dd>以视觉方式显示信息的装置 ... ...</dd>
+        </dl>
+        <h3>(6)嵌套列表</h3>
+        <ul>
+          <li>第一项</li>
+          <li>第二项
+            <ol type="A">
+              <li>第二子项1</li>
+              <li>第二子项2</li>
+            </ol>
+          </li>
+          <li>第三项
+            <dl>
+              <dt>自定义项目名称A</dt>
+              <dd>自定义项目数据A</dd>
+              <dt>自定义项目名称B</dt>
+              <dd>自定义项目数据B</dd>
+            </dl>
+          </li>
+          <li>第四项</li>
+        </ul>
       </div>
       <br />
     </div>
   </div>
 </template>
 <style scoped>
-.center {
-  align-items: center;
-  align-content: center;
-  text-align: center;
-}
-
-.content {
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-bottom: 10px;
-}
-
-.code {
-  padding: 5px;
-  border-style: dashed;
-  border-color: #0000FF;
-  border-width: thin;
-}
-
-.warn {
-  padding: 5px;
-  border-style: solid;
-  border-color: #FF0000;
-  border-width: thin;
-}
+@import url('../../style/right_content.css');
 
 </style>
 <script>

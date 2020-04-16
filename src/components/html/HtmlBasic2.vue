@@ -75,31 +75,7 @@
   </div>
 </template>
 <style scoped>
-.center {
-  align-items: center;
-  align-content: center;
-  text-align: center;
-}
-
-.content {
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-bottom: 10px;
-}
-
-.code {
-  padding: 5px;
-  border-style: dashed;
-  border-color: #0000FF;
-  border-width: thin;
-}
-
-.warn {
-  padding: 5px;
-  border-style: solid;
-  border-color: #FF0000;
-  border-width: thin;
-}
+@import url('../../style/right_content.css');
 
 </style>
 <script>

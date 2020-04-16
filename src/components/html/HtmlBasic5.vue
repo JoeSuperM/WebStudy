@@ -1,144 +1,202 @@
 <template>
-  <div id="html-basic-page">
-    <h1>演示超链接{{msg}}</h1>
+  <div>
+    <h1 class="center"><b>{{title}}</b></h1>
     <hr />
-    <a href="#label">点击进入锚点{{text}}</a>
-    <br />
-    <a href="https://www.galaxywind.com/">官网</a>
-    <br />
-    <!--blank新页面打开-->
-    <a href="https://www.galaxywind.com/" target="_blank">官网Blank</a>
-    <br />
-    <a href="https://www.galaxywind.com/" target="_top">官网top</a>
-    <br />
-    <a href="mailto:joesuperm@qq.com?subject=Hello%20World&body=TestIt">发送邮件给我</a>
-    <br />
-    <a name="label">锚点</a><br />
-    <hr />
-    <h1>演示图像</h1>
-    <h2>直接插入图片</h2>
-    <img src="../../assets/eg_mouse.jpg" />
-    <div>
-      <h2>背景图片</h2>
-      <p>这是一个左边图片<img src="../../assets/eg_mouse.jpg" align="left" />图片</p>
+    <div class="content">
+      <h1>一、块与类</h1>
+      <h2>1、HTML 块元素</h2>
+      <p>大多数 HTML 元素被定义为块级元素或内联元素。块级元素在浏览器显示时，通常会以新行来开始（和结束）。<br />
+        比如：&#60;h1&#62;、&#60;table&#62;、&#60;p&#62;、&#60;ul&#62;、&#60;div&#62;等</p>
+      <h2>2、HTML 内联元素</h2>
+      <p>内联元素在显示时通常不会以新行开始。<br />
+        比如：&#60;b&#62;、&#60;td&#62;、&#60;a&#62;、&#60;img&#62;、&#60;span&#62;等</p>
+      <h2>3、HTML &#60;div&#62; 元素</h2>
+      <p>它是可用于组合其他 HTML 元素的容器。该元素没有特定含义，常用于分块或文档布局等</p>
+      <h2>4、HTML &#60;span&#62; 元素</h2>
+      <p>它可用作文本的容器，也没有特定含义，常用于部分文本设置样式属性。</p>
+      <h2>块与类的实例</h2>
+      <div class="code">
+        <h3>1、利用div和style的class分类块元素</h3>
+        <div class="cls_div">
+          <p>这是一个分块的内容，class=cls_div</p>
+        </div>
+        <div class="cls_div">
+          <p>这是另外一个分块的内容,class=cls_div</p>
+        </div>
+        <h3>2、利用span和style的class分类行内元素</h3>
+        <p>这是简简单单的一行<span class="red">文字</span>，但是这个两个<span class="red">文字</span>很重要</p>
+      </div>
+      <h1>二、布局</h1>
+      <p>网站通常以多列显示内容，利用div元素可以将网站内容分块展示</p>
+      <h2>1、布局实例</h2>
+      <div class="code">
+        <div id="header">
+          <h1>这是顶部的标题</h1>
+        </div>
+        <div id="nav">
+          左侧选择项A<br>
+          左侧选择项B<br>
+          左侧选择项C<br>
+        </div>
+        <div id="section">
+          <h1>选项A</h1>
+          <p> 这是选项A情况下的介绍内容。 </p>
+          <p> 最后的结束段落 </p>
+        </div>
+        <div id="footer">
+          这是底部的授权和认证，版权等信息
+        </div>
+      </div>
+      <h2>2、注意事项</h2>
+      <div class="warn">
+        <p>HTML5提供的新语义元素定义了网页的不同部分</p>
+        <table border="1" cellpadding="10" cellspacing="0" width="500">
+          <caption>HTML5语义元素</caption>
+          <tr>
+            <td>header</td>
+            <td>定义文档或节的页眉</td>
+          </tr>
+          <tr>
+            <td>nav</td>
+            <td>定义导航链接的容器</td>
+          </tr>
+          <tr>
+            <td>section</td>
+            <td>定义文档中的节</td>
+          </tr>
+          <tr>
+            <td>article</td>
+            <td>定义独立的自包含文章</td>
+          </tr>
+          <tr>
+            <td>aside</td>
+            <td>定义内容之外的内容（比如侧栏）</td>
+          </tr>
+          <tr>
+            <td>footer</td>
+            <td>定义文档或节的页脚</td>
+          </tr>
+          <tr>
+            <td>details</td>
+            <td>定义额外的细节</td>
+          </tr>
+          <tr>
+            <td>summary</td>
+            <td>定义 details 元素的标题</td>
+          </tr>
+        </table>
+        <p>演示通过HTML5提供的新语义元素创建多列布局</p>
+        <header>
+          <h1>City Gallery</h1>
+        </header>
+        <nav>
+          London<br>
+          Paris<br>
+          Tokyo<br>
+        </nav>
+        <section>
+          <h1>London</h1>
+          <p>
+            London is the capital city of England. It is the most populous city in the United Kingdom,
+            with a metropolitan area of over 13 million inhabitants.
+          </p>
+          <p>
+            Standing on the River Thames, London has been a major settlement for two millennia,
+            its history going back to its founding by the Romans, who named it Londinium.
+          </p>
+        </section>
+        <footer>
+          Copyright W3School.com.cn
+        </footer>
+      </div>
       <br />
-      <p>这是一个右边图片<img src="../../assets/eg_mouse.jpg" align="right" />图片</p>
-      <br />
-      <p>这是一个上面图片<img src="../../assets/eg_mouse.jpg" align="top" />图片</p>
-      <br />
-      <p>这是一个下面图片<img src="../../assets/eg_mouse.jpg" align="bottom" />图片</p>
-      <br />
-      <p>这是一个中间图片<img src="../../assets/eg_mouse.jpg" align="middle" />图片</p>
-      <br />
-      <p>这是一个图片<img src="../../assets/eg_mouse.jpg" alt="没有加载到图片的显示" />图片</p>
-      <br />
-    </div>
-    <h2>图片尺寸</h2>
-    <img src="../../assets/eg_mouse.jpg" width="200" height="200" />
-    <br />
-    <img src="../../assets/eg_mouse.jpg" width="300" height="300" />
-    <h2>表格</h2>
-    <table border="2" cellpadding="20" cellspacing="5" background="../../assets/base2.jpg">
-      <caption>这是表格标题</caption>
-      <tr>
-        <th>横表头1,加宽内容</th>
-        <th>横表头2,加宽内容</th>
-        <th>横表头3,加宽内容</th>
-        <th>横表头4,加宽内容</th>
-      </tr>
-      <tr>
-        <th>竖表头1</th>
-        <td align="left">行1列2</td>
-        <td>行1列3</td>
-        <td>行1列4</td>
-      </tr>
-      <tr>
-        <th>竖表头2</th>
-        <td align="left" colspan="2">跨行</td>
-        <td>行2列4</td>
-      </tr>
-      <tr>
-        <th>竖表头3</th>
-        <td>&nbsp;</td>
-        <td align="right">行3列3</td>
-        <td rowspan="2">跨列</td>
-      </tr>
-      <tr>
-        <th>竖表头4</th>
-        <td>行4列2</td>
-        <td align="right">行4列3</td>
-      </tr>
-    </table>
-    <h2>列表</h2>
-    <div align="left">
-      <p>无序列表</p>
-      <ul type="disc">
-        <li>周超(disc,默认)</li>
-        <li>余瑞梅</li>
-        <li>小飞鱼</li>
-      </ul>
-      <ul type="circle">
-        <li>周超(circle)</li>
-        <li>余瑞梅</li>
-        <li>小飞鱼</li>
-      </ul>
-      <ul type="square">
-        <li>周超(square)</li>
-        <li>余瑞梅</li>
-        <li>小飞鱼</li>
-      </ul>
-      <p>有序列表</p>
-      <ol type="1">
-        <li>周超(类型：1，默认)</li>
-        <li>余瑞梅</li>
-        <li>小飞鱼</li>
-      </ol>
-      <ol type="A">
-        <li>周超(类型：A)</li>
-        <li>余瑞梅</li>
-        <li>小飞鱼</li>
-      </ol>
-      <ol type="a">
-        <li>周超(类型：a)</li>
-        <li>余瑞梅</li>
-        <li>小飞鱼</li>
-      </ol>
-      <ol type="i">
-        <li>周超(类型：i)</li>
-        <li>余瑞梅</li>
-        <li>小飞鱼</li>
-      </ol>
-      <ol type="I">
-        <li>周超(类型：I)</li>
-        <li>余瑞梅</li>
-        <li>小飞鱼</li>
-      </ol>
-      <dl>
-        <dt>计算机</dt>
-        <dd>用来计算的仪器 ... ...</dd>
-        <dt>显示器</dt>
-        <dd>以视觉方式显示信息的装置 ... ...</dd>
-      </dl>
     </div>
   </div>
 </template>
+<style scoped>
+@import url('../../style/right_content.css');
+
+.cls_div {
+  background-color: black;
+  color: white;
+  margin: 10px;
+  padding: 5px;
+}
+
+span.red {
+  color: red;
+  font-size: 25px;
+}
+
+#header {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 5px;
+}
+
+#nav {
+  line-height: 30px;
+  background-color: #eeeeee;
+  height: 300px;
+  width: 100px;
+  float: left;
+  padding: 5px;
+}
+
+#section {
+  width: 350px;
+  float: left;
+  padding: 10px;
+}
+
+#footer {
+  background-color: black;
+  color: white;
+  clear: both;
+  text-align: center;
+  padding: 5px;
+}
+
+header {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 5px;
+}
+
+nav {
+  line-height: 30px;
+  background-color: #eeeeee;
+  height: 300px;
+  width: 100px;
+  float: left;
+  padding: 5px;
+}
+
+section {
+  width: 350px;
+  float: left;
+  padding: 10px;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  clear: both;
+  text-align: center;
+  padding: 5px;
+}
+
+</style>
 <script>
 export default {
   name: 'HtmlBasic5',
   data() {
     return {
-      msg: 'Welcome to HTML基础!!!',
-      text: '新的内容'
+      title: 'HTML基础--块、类、布局',
     }
   }
 }
 
 </script>
-<style scoped>
-#html-basic-page {
-  align: "center";
-  background: url("../../assets/base1.jpg");
-  text-align: center;
-}
-
-</style>
