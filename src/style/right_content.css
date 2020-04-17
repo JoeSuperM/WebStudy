@@ -2,7 +2,7 @@
 * @Author: zhouchao
 * @Date:   2020-04-16 14:08:57
 * @Last Modified by:   zhouchao
-* @Last Modified time: 2020-04-16 14:09:19
+* @Last Modified time: 2020-04-17 10:29:47
 */
 
 .center {
@@ -28,4 +28,14 @@
   border-style: solid;
   border-color: #FF0000;
   border-width: thin;
+}
+
+span.red {
+  color: red;
+  font-style: bold;
+  font-size: 20px;
+}
+
+tr.table_head th {
+  color: white;
 }

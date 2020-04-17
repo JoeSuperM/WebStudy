@@ -52,37 +52,9 @@
         <p>HTML5提供的新语义元素定义了网页的不同部分</p>
         <table border="1" cellpadding="10" cellspacing="0" width="500">
           <caption>HTML5语义元素</caption>
-          <tr>
-            <td>header</td>
-            <td>定义文档或节的页眉</td>
-          </tr>
-          <tr>
-            <td>nav</td>
-            <td>定义导航链接的容器</td>
-          </tr>
-          <tr>
-            <td>section</td>
-            <td>定义文档中的节</td>
-          </tr>
-          <tr>
-            <td>article</td>
-            <td>定义独立的自包含文章</td>
-          </tr>
-          <tr>
-            <td>aside</td>
-            <td>定义内容之外的内容（比如侧栏）</td>
-          </tr>
-          <tr>
-            <td>footer</td>
-            <td>定义文档或节的页脚</td>
-          </tr>
-          <tr>
-            <td>details</td>
-            <td>定义额外的细节</td>
-          </tr>
-          <tr>
-            <td>summary</td>
-            <td>定义 details 元素的标题</td>
+          <tr v-for="element in elements" :key="element.name">
+            <td>{{element.name}}</td>
+            <td>{{element.desc}}</td>
           </tr>
         </table>
         <p>演示通过HTML5提供的新语义元素创建多列布局</p>
@@ -195,6 +167,40 @@ export default {
   data() {
     return {
       title: 'HTML基础--块、类、布局',
+      elements: [{
+          name: "header",
+          desc: "定义文档或节的页眉"
+
+        },
+        {
+          name: "nav",
+          desc: "定义导航链接的容器"
+        },
+        {
+          name: "section",
+          desc: "定义文档中的节"
+        },
+        {
+          name: "article",
+          desc: "定义独立的自包含文章"
+        },
+        {
+          name: "aside",
+          desc: "定义内容之外的内容（比如侧栏）"
+        },
+        {
+          name: "footer",
+          desc: "定义文档或节的页脚"
+        },
+        {
+          name: "details",
+          desc: "定义额外的细节"
+        },
+        {
+          name: "summary",
+          desc: "定义 details 元素的标题"
+        }
+      ]
     }
   }
 }
