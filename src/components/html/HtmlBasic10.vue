@@ -84,6 +84,85 @@
         </tr>
       </table>
       <h1>四、多媒体</h1>
+      <p>多媒体来自多种不同的格式。它可以是您听到或看到的任何内容，文字、图片、音乐、音效、录音、电影、动画等等。在因特网上，您会经常发现嵌入网页中的多媒体元素，现代浏览器已支持多种多媒体格式。
+      </p>
+      <h2>1、多媒体格式</h2>
+      <p>多媒体元素（比如视频和音频）存储于媒体文件中。确定媒体类型的最常用的方法是查看文件扩展名。</p>
+      <p>视频格式：AVI(.avi)、MPEG(.mpg\.mpeg)、WMV(.wmv)、QuikTime(.mov)、Flash(.swf\.flv)、Mpeg-4(.mp4)等</p>
+      <p>声音格式：MIDI(.mid\.midi)、Wave(.wav)、WMA(.wma)、MP3(.mp3\.mpga)</p>
+      <h2>2、Object元素</h2>
+      <p>&#60;object&#62;的作用是支持HTML助手（插件）。辅助应用程序（helper application）是可由浏览器启动的程序。辅助应用程序也称为插件。辅助程序可用于播放音频和视频（以及其他）。</p>
+      <h2>3、音频</h2>
+      <div class="code">
+        <h3>使用embed元素</h3>
+        <p>embed标签定义外部（非 HTML）内容的容器。HTML5新增的，H4无效，而且不同浏览器对音频格式支持不同</p>
+        <embed height="150" width="300" src="https://www.w3school.com.cn/i/horse.mp3" />
+        <h3>使用object元素</h3>
+        <p>object标签也可以定义外部（非HTML）内容的容器</p>
+        <object data="https://www.w3school.com.cn/i/horse.mp3" />
+        <h3>使用H5 audio元素</h3>
+        <p>audio元素是一个H5元素，在H4中是非法的，但在所有浏览器中都有效。</p>
+        <audio controls="controls">
+          <source src="https://www.w3school.com.cn/i/song.ogg" type="audio/ogg">
+          <source src="https://www.w3school.com.cn/i/song.mp3" type="audio/mpeg">
+          对不起，您的浏览器不支持audio元素
+        </audio>
+        <h3>其他方法（使用雅虎或超链接）</h3>
+        <p>使用雅虎播放器，导入雅虎JS：&#60;script type=&#34;text/javascript&#34; src=&#34;http://mediaplayer.yahoo.com/js&#34;&#62;&#60;/script&#62;</p>
+        使用超链接：<a href="https://www.w3school.com.cn/i/song.mp3">点击播放音乐</a>
+        <h3>最好的HTML解决方法</h3>
+        <p>
+          <pre>
+        &#60;audio controls=&#34;controls&#34;&#62;
+          &#60;source src=&#34;https://www.w3school.com.cn/i/song.ogg&#34; type=&#34;audio/ogg&#34;&#62;
+          &#60;source src=&#34;https://www.w3school.com.cn/i/song.mp3&#34; type=&#34;audio/mpeg&#34;&#62;
+          &#60;embed height=&#34;150&#34; width=&#34;300&#34; src=&#34;https://www.w3school.com.cn/i/song.mp3&#34; /&#62;
+        &#60;/audio&#62;
+         </pre>
+        </p>
+        <audio controls="controls">
+          <source src="https://www.w3school.com.cn/i/song.ogg" type="audio/ogg">
+          <source src="https://www.w3school.com.cn/i/song.mp3" type="audio/mpeg">
+          <embed height="150" width="300" src="https://www.w3school.com.cn/i/song.mp3" />
+        </audio>
+      </div>
+      <h2>4、视频</h2>
+      <div class="code">
+        <h3>使用embed标签</h3>
+        <embed src="https://www.w3school.com.cn/i/movie.swf" width="320" height="240" />
+        <h3>使用object标签</h3>
+        <object width="320" height="240" data="https://www.w3school.com.cn/i/movie.mp4" />
+        <h3>使用video标签</h3>
+        <video width="320" height="240" controls="controls" autoplay="autoplay">
+          <source src="https://www.w3school.com.cn/i/movie.ogg" type="video/ogg" />
+          <source src="https://www.w3school.com.cn/i/movie.mp4" type="video/mp4" />
+          <source src="https://www.w3school.com.cn/i/movie.webm" type="video/webm" />
+        </video>
+        <h3>其他方法（视频网站或超链接）</h3>
+        <p>将视频上传到视频网站，然后通过embed指定路径来访问</p>
+        <p>使用超链接：<a href="https://www.w3school.com.cn/i/movie.mp4">点击播放视频</a></p>
+        <h3>最好的HTML解决方法</h3>
+        <p>
+          <pre>
+          &#60;video width=&#34;320&#34; height=&#34;240&#34; controls=&#34;controls&#34; autoplay=&#34;autoplay&#34;&#62;
+            &#60;source src=&#34;https://www.w3school.com.cn/i/movie.ogg&#34; type=&#34;video/ogg&#34; /&#62;
+            &#60;source src=&#34;https://www.w3school.com.cn/i/movie.mp4&#34; tye=&#34;video/mp4&#34; /&#62;
+            &#60;source src=&#34;https://www.w3school.com.cn/i/movie.webm&#34; type=&#34;video/webm&#34; /&#62;
+            &#60;object data=&#34;https://www.w3school.com.cn/i/movie.mp4&#34; width=&#34;320&#34; height=&#34;240&#34;&#62;
+              &#60;embed src=&#34;https://www.w3school.com.cn/i/movie.swf&#34; width=&#34;320&#34; height=&#34;240&#34; /&#62;
+          &#60;/object&#62;
+        &#60;/video&#62;
+        </pre>
+        </p>
+        <video width="320" height="240" controls="controls" autoplay="autoplay">
+          <source src="https://www.w3school.com.cn/i/movie.ogg" type="video/ogg" />
+          <source src="https://www.w3school.com.cn/i/movie.mp4" type="video/mp4" />
+          <source src="https://www.w3school.com.cn/i/movie.webm" type="video/webm" />
+          <object data="https://www.w3school.com.cn/i/movie.mp4" width="320" height="240">
+            <embed src="https://www.w3school.com.cn/i/movie.swf" width="320" height="240" />
+          </object>
+        </video>
+      </div>
     </div>
     <br />
   </div>

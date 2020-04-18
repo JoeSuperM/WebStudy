@@ -14,6 +14,7 @@ import HtmlBasic7 from '@/components/html/HtmlBasic7'
 import HtmlBasic8 from '@/components/html/HtmlBasic8'
 import HtmlBasic9 from '@/components/html/HtmlBasic9'
 import HtmlBasic10 from '@/components/html/HtmlBasic10'
+import HtmlBasic11 from '@/components/html/HtmlBasic11'
 
 import LeftCSS from '@/components/leftbar/LeftCssBar'
 import LeftJavaScript from '@/components/leftbar/LeftJavaScriptBar'
@@ -118,6 +119,14 @@ export default new Router({
       default: TopMain,
       left: LeftHtml,
       right: HtmlBasic10
+    }
+  }, {
+    path: '/html/basic11',
+    name: 'HTML-Basic-11',
+    components: {
+      default: TopMain,
+      left: LeftHtml,
+      right: HtmlBasic11
     }
   }, {
     path: '/css',

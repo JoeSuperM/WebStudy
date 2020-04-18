@@ -21,16 +21,19 @@
         <router-link :to="{name:'HTML-Basic-6'}">框架、背景、脚本</router-link>
       </li>
       <li>
-        <router-link :to="{name:'HTML-Basic-7'}">路径，实体，URL，颜色</router-link>
+        <router-link :to="{name:'HTML-Basic-7'}">路径、实体、URL、颜色</router-link>
       </li>
       <li>
         <router-link :to="{name:'HTML-Basic-8'}">HTML表单元素</router-link>
       </li>
       <li>
-        <router-link :to="{name:'HTML-Basic-9'}">H5简介，元素，语义</router-link>
+        <router-link :to="{name:'HTML-Basic-9'}">H5简介、元素、语义</router-link>
       </li>
       <li>
         <router-link :to="{name:'HTML-Basic-10'}">H5图形、媒体</router-link>
+      </li>
+      <li>
+        <router-link :to="{name:'HTML-Basic-11'}">H5拖放、Web存储、应用缓存、Workers、SSE</router-link>
       </li>
     </ul>
   </div>
