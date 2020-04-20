@@ -33,7 +33,10 @@
         <router-link :to="{name:'HTML-Basic-10'}">H5图形、媒体</router-link>
       </li>
       <li>
-        <router-link :to="{name:'HTML-Basic-11'}">H5拖放、Web存储、应用缓存、Workers、SSE</router-link>
+        <router-link :to="{name:'HTML-Basic-11'}">H5拖放、Web存储</router-link>
+      </li>
+      <li>
+        <router-link :to="{name:'HTML-Basic-12'}">H5应用缓存、Workers、SSE</router-link>
       </li>
     </ul>
   </div>
@@ -44,7 +47,7 @@
 </style>
 <script>
 export default {
-  name: 'HtmlBasic1',
+  name: 'HtmlBasic0',
   data() {
     return {
       title: 'HTML课程表'

@@ -67,6 +67,35 @@
           </pre>
         </p>
       </div>
+      <h2>sessionStorage对象</h2>
+      <p>sessionStorage对象等同localStorage对象，不同之处在于只对一个session存储数据。如果用户关闭具体的浏览器标签页，数据也会被删除。</p>
+      <div class="code">
+        <p>
+          <pre>
+            // 存储
+            sessionStorage.setItem("lastname", "Gates");
+            // 取回
+            document.getElementById("result").innerHTML = sessionStorage.getItem("lastname");
+          </pre>
+        </p>
+      </div>
+      <h2>演示存储实例</h2>
+      <div class="code">
+        <div>
+          <div id="result"></div>
+          <br />
+          请输入Key：<input type="text" v-model="key" name="key">【{{key}}】<br />
+          请输入Value:<input type="text" v-model="value" name="value">【{{value}}】
+          <h3>LocalStorage实例</h3>
+          <button v-on:click="saveLocal">保存(Local)</button>
+          <button v-on:click="takeLocal">读取(Local)</button>
+          <button v-on:click="deleteLocal">删除(Local)</button>
+          <h3>SessionStorage实例</h3>
+          <button v-on:click="saveSession">保存(Session)</button>
+          <button v-on:click="takeSession">读取(Session)</button>
+          <button v-on:click="deleteSession">删除(Session)</button>
+        </div>
+      </div>
     </div>
     <br />
   </div>
@@ -89,7 +118,9 @@ export default {
   name: 'HtmlBasic11',
   data() {
     return {
-      title: 'HTML基础--H5拖放、Web存储、应用缓存、Workers、SSE'
+      title: 'HTML基础--H5拖放、Web存储、应用缓存、Workers、SSE',
+      key: 'key',
+      value: ''
     }
   },
   methods: {
@@ -103,6 +134,80 @@ export default {
       ev.preventDefault();
       var data = ev.dataTransfer.getData("Text");
       ev.target.appendChild(document.getElementById(data));
+    },
+    checkParam: function(checkValue) { //检查Key和Value的合法性
+      if (typeof(this.key) === "undefined" || this.key.trim() === "") {
+        alert("Key不允许为空！");
+        return false;
+      }
+      if (checkValue) {
+        if (typeof(this.value) === "undefined" || this.value.trim() === "") {
+          alert("Value不允许为空！");
+          return false;
+        }
+      }
+      return true;
+    },
+    _save: function(storageObj) {
+      if (this.checkParam(true)) {
+        if (typeof(Storage) !== "undefined") {
+          var localKey = this.key.trim();
+          var localValue = this.value.trim();
+          storageObj.setItem(localKey, localValue);
+          this.value = "";
+          alert("保存成功！");
+        } else {
+          alert("抱歉！您的浏览器不支持 Web Storage ...");
+        }
+      }
+    },
+    _take: function(storageFlag, storageObj) {
+      if (this.checkParam(false)) {
+        if (typeof(Storage) !== "undefined") {
+          var localKey = this.key.trim();
+          var localValue = storageObj.getItem(localKey);
+          if (localValue == undefined) {
+            alert("对不起，没有保存该Key的值");
+            return;
+          }
+          document.getElementById("result").innerHTML = "保存内容(" + storageFlag + ")为Key：" +
+            localKey + ", Value : " + localValue;
+          this.value = localValue;
+        } else {
+          alert("抱歉！您的浏览器不支持 Web Storage ...");
+        }
+      }
+    },
+    _delete: function(storageObj) {
+      if (this.checkParam(false)) {
+        if (typeof(Storage) !== "undefined") {
+          var localKey = this.key.trim();
+          storageObj.removeItem(localKey);
+          alert("删除成功！");
+          this.key = "";
+          this.value = "";
+        } else {
+          alert("抱歉！您的浏览器不支持 Web Storage ...");
+        }
+      }
+    },
+    saveLocal() {
+      this._save(localStorage);
+    },
+    deleteLocal() {
+      this._delete(localStorage);
+    },
+    takeLocal() {
+      this._take("Local", localStorage);
+    },
+    saveSession: function() {
+      this._save(sessionStorage);
+    },
+    deleteSession: function() {
+      this._delete(sessionStorage);
+    },
+    takeSession: function() {
+      this._take('Session', sessionStorage);
     }
   }
 }

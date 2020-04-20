@@ -1,7 +1,9 @@
 <template>
   <div>
     <div id="main-top">
-      <h1>{{title}}</h1>
+      <router-link :to="{name:'TopMain'}">
+        <h1>{{title}}</h1>
+      </router-link>
     </div>
     <div id="top">
       <ul id="h_ul">
@@ -64,6 +66,18 @@
 #h_ul a:hover,
 #h_ul a:active {
   background-color: #00CC00;
+}
+
+#main-top a:link,
+#main-top a:visited {
+  color: black;
+  background-color: transparent;
+  text-align: center;
+  text-decoration: none;
+}
+#main-top a:hover,
+#main-top a:active {
+  background-color: transparent;
 }
 
 </style>

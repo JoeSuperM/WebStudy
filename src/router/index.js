@@ -3,6 +3,8 @@ import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 
 import TopMain from '@/components/TopTableBar'
+import Welcome from '@/components/Welcome'
+
 import LeftHtml from '@/components/leftbar/LeftHtmlBar'
 import HtmlBasic1 from '@/components/html/HtmlBasic1'
 import HtmlBasic2 from '@/components/html/HtmlBasic2'
@@ -15,11 +17,12 @@ import HtmlBasic8 from '@/components/html/HtmlBasic8'
 import HtmlBasic9 from '@/components/html/HtmlBasic9'
 import HtmlBasic10 from '@/components/html/HtmlBasic10'
 import HtmlBasic11 from '@/components/html/HtmlBasic11'
+import HtmlBasic12 from '@/components/html/HtmlBasic12'
 
 import LeftCSS from '@/components/leftbar/LeftCssBar'
 import LeftJavaScript from '@/components/leftbar/LeftJavaScriptBar'
 import LeftVue from '@/components/leftbar/LeftVueBar'
-import MainContent from '@/components/MainContent'
+
 
 Vue.use(Router)
 
@@ -30,7 +33,7 @@ export default new Router({
     components: {
       default: TopMain,
       left: LeftHtml,
-      right: HelloWorld
+      right: Welcome
     }
   }, {
     path: '/html',
@@ -129,12 +132,20 @@ export default new Router({
       right: HtmlBasic11
     }
   }, {
+    path: '/html/basic12',
+    name: 'HTML-Basic-12',
+    components: {
+      default: TopMain,
+      left: LeftHtml,
+      right: HtmlBasic12
+    }
+  }, {
     path: '/css',
     name: 'CSS',
     components: {
       default: TopMain,
       left: LeftCSS,
-      right: MainContent
+      right: Welcome
     }
   }, {
     path: '/javaScript',
@@ -142,7 +153,7 @@ export default new Router({
     components: {
       default: TopMain,
       left: LeftJavaScript,
-      right: MainContent
+      right: Welcome
     }
   }, {
     path: '/vue',
@@ -151,6 +162,7 @@ export default new Router({
       default: TopMain,
       left: LeftVue,
       right: HelloWorld
+
     }
   }]
 })
