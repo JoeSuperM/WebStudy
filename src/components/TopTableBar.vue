@@ -67,7 +67,7 @@
 #h_ul a:active {
   background-color: #00CC00;
 }
-
+/*顶部标题链接到欢迎页*/
 #main-top a:link,
 #main-top a:visited {
   color: black;

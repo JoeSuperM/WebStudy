@@ -2,7 +2,7 @@
 * @Author: zhouchao
 * @Date:   2020-04-16 14:08:57
 * @Last Modified by:   zhouchao
-* @Last Modified time: 2020-04-17 10:29:47
+* @Last Modified time: 2020-04-21 14:26:06
 */
 
 .center {
@@ -38,4 +38,12 @@ span.red {
 
 tr.table_head th {
   color: white;
+}
+
+div.code pre {
+  font-size: 16px;
+}
+
+div.code p {
+  font-size: 16px;
 }
