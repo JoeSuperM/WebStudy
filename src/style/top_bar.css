@@ -1,0 +1,54 @@
+/*
+* @Author: zhouchao
+* @Date:   2020-04-22 16:12:14
+* @Last Modified by:   zhouchao
+* @Last Modified time: 2020-04-22 16:13:28
+*/
+
+/*顶部列表栏目的导航栏*/
+#h_ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #bebebe;
+  border-style: dashed;
+  border-color: #0000FF;
+  border-width: thin;
+}
+
+#h_ul li {
+  float: left;
+}
+
+#h_ul a:link,
+#h_ul a:visited {
+  display: block;
+  width: 150px;
+  font-weight: bold;
+  color: #FFFFFF;
+  background-color: #bebebe;
+  text-align: center;
+  padding: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+#h_ul a:hover,
+#h_ul a:active {
+  background-color: #00CC00;
+}
+
+/*顶部标题链接到欢迎页*/
+#main-top a:link,
+#main-top a:visited {
+  color: black;
+  background-color: transparent;
+  text-align: center;
+  text-decoration: none;
+}
+
+#main-top a:hover,
+#main-top a:active {
+  background-color: transparent;
+}

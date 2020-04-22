@@ -12,7 +12,7 @@
         居住地址：成都市西源大道1311号
       </p>
     </div>
-    <div class="code">
+    <div class="warn">
       <p class="title">About Me</p>
       <p class="intro">&#160;&#160;&#160;&#160;我毕业于成都理工大学，今年28岁，已婚，现任职于深圳市银河风云网络系统股份有限公司成都分公司，主要从事Android和Web前端开发，工作时间5年。</p>
       <p class="title">About My Company</p>
