@@ -24,7 +24,22 @@
         <router-link :to="{name:'CSS-Basic-7'}">对齐、尺寸、分类、导航、透明度、媒介等</router-link>
       </li>
       <li>
-        <router-link :to="{name:'CSS-Basic-8'}">CSS3-边框、背景、文本、字体</router-link>
+        <router-link :to="{name:'CSS-Basic-8'}">CSS3-边框、背景、渐变</router-link>
+      </li>
+      <li>
+        <router-link :to="{name:'CSS-Basic-9'}">CSS3-文本效果、字体</router-link>
+      </li>
+      <li>
+        <router-link :to="{name:'CSS-Basic-10'}">CSS3-2D转换、3D转换</router-link>
+      </li>
+      <li>
+        <router-link :to="{name:'CSS-Basic-11'}">CSS3-过渡、动画</router-link>
+      </li>
+      <li>
+        <router-link :to="{name:'CSS-Basic-12'}">CSS3-多列、用户界面</router-link>
+      </li>
+      <li>
+        <router-link :to="{name:'CSS-Basic-13'}">CSS3-图片与按钮</router-link>
       </li>
     </ul>
   </div>

@@ -28,6 +28,11 @@ import CssBasic5 from '@/components/css/CssBasic5'
 import CssBasic6 from '@/components/css/CssBasic6'
 import CssBasic7 from '@/components/css/CssBasic7'
 import CssBasic8 from '@/components/css/CssBasic8'
+import CssBasic9 from '@/components/css/CssBasic9'
+import CssBasic10 from '@/components/css/CssBasic10'
+import CssBasic11 from '@/components/css/CssBasic11'
+import CssBasic12 from '@/components/css/CssBasic12'
+import CssBasic13 from '@/components/css/CssBasic13'
 
 import LeftJavaScript from '@/components/leftbar/LeftJavaScriptBar'
 import LeftVue from '@/components/leftbar/LeftVueBar'
@@ -219,6 +224,46 @@ export default new Router({
       default: TopMain,
       left: LeftCSS,
       right: CssBasic8
+    }
+  }, {
+    path: '/css/basic9',
+    name: 'CSS-Basic-9',
+    components: {
+      default: TopMain,
+      left: LeftCSS,
+      right: CssBasic9
+    }
+  }, {
+    path: '/css/basic10',
+    name: 'CSS-Basic-10',
+    components: {
+      default: TopMain,
+      left: LeftCSS,
+      right: CssBasic10
+    }
+  }, {
+    path: '/css/basic11',
+    name: 'CSS-Basic-11',
+    components: {
+      default: TopMain,
+      left: LeftCSS,
+      right: CssBasic11
+    }
+  }, {
+    path: '/css/basic12',
+    name: 'CSS-Basic-12',
+    components: {
+      default: TopMain,
+      left: LeftCSS,
+      right: CssBasic12
+    }
+  }, {
+    path: '/css/basic13',
+    name: 'CSS-Basic-13',
+    components: {
+      default: TopMain,
+      left: LeftCSS,
+      right: CssBasic13
     }
   }, {
     path: '/javaScript',
