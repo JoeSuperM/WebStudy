@@ -3,13 +3,7 @@
     <p id="cls_title">JavaScript课程表</p>
     <ul id="v_ul">
       <li>
-        <router-link :to="{name:'TopTableBar'}">HTML基础</router-link>
-      </li>
-      <li>
-        <router-link :to="{name:'CSS'}"> CSS </router-link>
-      </li>
-      <li>
-        <a href="https:\\www.baidu.com\">百度</a>
+        <router-link :to="{name:'JavaScript'}">JavaScript基础知识</router-link>
       </li>
     </ul>
   </div>

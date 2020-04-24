@@ -3,13 +3,7 @@
     <p id="cls_title">Vue课程表</p>
     <ul id="v_ul">
       <li>
-        <router-link :to="{name:'TopTableBar'}">HTML基础</router-link>
-      </li>
-      <li>
-        <router-link :to="{name:'CSS'}"> CSS </router-link>
-      </li>
-      <li>
-        <a href="https:\\www.baidu.com\">百度</a>
+        <router-link :to="{name:'Vue-Basic-1'}">简介、基础语法</router-link>
       </li>
     </ul>
   </div>

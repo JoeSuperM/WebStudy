@@ -38,7 +38,7 @@ import CssBasic15 from '@/components/css/CssBasic15'
 
 import LeftJavaScript from '@/components/leftbar/LeftJavaScriptBar'
 import LeftVue from '@/components/leftbar/LeftVueBar'
-
+import VueBasic1 from '@/components/vue/VueBasic1'
 
 Vue.use(Router)
 
@@ -57,7 +57,7 @@ export default new Router({
     components: {
       default: TopMain,
       left: LeftHtml,
-      right: HtmlBasic1
+      right: Welcome
     }
   }, {
     path: '/html/basic1',
@@ -161,7 +161,7 @@ export default new Router({
     components: {
       default: TopMain,
       left: LeftCSS,
-      right: CssBasic1
+      right: Welcome
     }
   }, {
     path: '/css/basic1',
@@ -297,8 +297,15 @@ export default new Router({
     components: {
       default: TopMain,
       left: LeftVue,
-      right: HelloWorld
-
+      right: Welcome
+    }
+  }, {
+    path: '/vue/basic1',
+    name: 'Vue-Basic-1',
+    components: {
+      default: TopMain,
+      left: LeftVue,
+      right: VueBasic1
     }
   }]
 })
