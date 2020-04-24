@@ -121,6 +121,8 @@
           <button id="anim-btn">Click Me</button>
           <p>按钮动画 - "按压效果"</p>
           <button id="press-btn">Click Me</button>
+          <p>按钮动画 - "缩小效果"</p>
+          <button id="scale-btn">Click Me</button>
         </div>
       </div>
     </div>
@@ -236,6 +238,31 @@ div.float-btn button:hover {
   background-color: #3e8e41;
   box-shadow: 0 2px #666;
   transform: translateY(4px);
+}
+
+#scale-btn {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 5px #ddd;
+}
+
+#scale-btn:hover {
+  background-color: #3e8e41;
+}
+
+#scale-btn:active {
+  background-color: #3e8e41;
+  box-shadow: 0 2px #999;
+  transform: scale(0.95, 0.95);
 }
 
 div.hover .btn1 {

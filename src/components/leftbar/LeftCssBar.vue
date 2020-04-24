@@ -41,6 +41,12 @@
       <li>
         <router-link :to="{name:'CSS-Basic-13'}">CSS3-图片与按钮</router-link>
       </li>
+      <li>
+        <router-link :to="{name:'CSS-Basic-14'}">CSS3-分页、框、FlexBox</router-link>
+      </li>
+      <li>
+        <router-link :to="{name:'CSS-Basic-15'}">CSS3-多媒体查询</router-link>
+      </li>
     </ul>
   </div>
 </template>

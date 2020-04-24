@@ -33,6 +33,8 @@ import CssBasic10 from '@/components/css/CssBasic10'
 import CssBasic11 from '@/components/css/CssBasic11'
 import CssBasic12 from '@/components/css/CssBasic12'
 import CssBasic13 from '@/components/css/CssBasic13'
+import CssBasic14 from '@/components/css/CssBasic14'
+import CssBasic15 from '@/components/css/CssBasic15'
 
 import LeftJavaScript from '@/components/leftbar/LeftJavaScriptBar'
 import LeftVue from '@/components/leftbar/LeftVueBar'
@@ -264,6 +266,22 @@ export default new Router({
       default: TopMain,
       left: LeftCSS,
       right: CssBasic13
+    }
+  }, {
+    path: '/css/basic14',
+    name: 'CSS-Basic-14',
+    components: {
+      default: TopMain,
+      left: LeftCSS,
+      right: CssBasic14
+    }
+  }, {
+    path: '/css/basic15',
+    name: 'CSS-Basic-15',
+    components: {
+      default: TopMain,
+      left: LeftCSS,
+      right: CssBasic15
     }
   }, {
     path: '/javaScript',
