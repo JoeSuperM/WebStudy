@@ -39,6 +39,9 @@ import CssBasic15 from '@/components/css/CssBasic15'
 import LeftJavaScript from '@/components/leftbar/LeftJavaScriptBar'
 import LeftVue from '@/components/leftbar/LeftVueBar'
 import VueBasic1 from '@/components/vue/VueBasic1'
+import VueBasic2 from '@/components/vue/VueBasic2'
+import VueBasic3 from '@/components/vue/VueBasic3'
+import VueBasic4 from '@/components/vue/VueBasic4'
 
 Vue.use(Router)
 
@@ -306,6 +309,30 @@ export default new Router({
       default: TopMain,
       left: LeftVue,
       right: VueBasic1
+    }
+  }, {
+    path: '/vue/basic2',
+    name: 'Vue-Basic-2',
+    components: {
+      default: TopMain,
+      left: LeftVue,
+      right: VueBasic2
+    }
+  }, {
+    path: '/vue/basic3',
+    name: 'Vue-Basic-3',
+    components: {
+      default: TopMain,
+      left: LeftVue,
+      right: VueBasic3
+    }
+  }, {
+    path: '/vue/basic4',
+    name: 'Vue-Basic-4',
+    components: {
+      default: TopMain,
+      left: LeftVue,
+      right: VueBasic4
     }
   }]
 })

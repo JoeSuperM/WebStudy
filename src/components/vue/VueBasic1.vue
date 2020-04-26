@@ -127,6 +127,52 @@
       <h2>指令</h2>
       <p>指令(Directives)是带有v-前缀的特殊attribute。指令attribute的值预期是单个JavaScript表达式 (v-for是例外情况)。指令的职责是，当表达式的值改变时，将其产生的连带影响，响应式地作用于DOM。</p>
       <h3>参数</h3>
+      <p>一些指令能够接收一个“参数”，在指令名称之后以冒号表示。如：v-bind:href="param",v-on:click="click"等</p>
+      <h3>动态参数</h3>
+      <p>从2.6.0开始，可以用方括号括起来的JavaScript表达式作为一个指令的参数。如：v-bind:[attrName]="url", v-on:[methodName]="doSomeThing".</p>
+      <p>上述的AttrName会被作为一个JavaScript表达式进行动态求值，求得的值将会作为最终的参数来使用。如attrName="href"，则相当于v-bind:href="url".</p>
+      <p><span class="red">注意：</span>动态参数预期会求出一个字符串，异常情况下值为null。这个特殊的null值可以被显性地用于移除绑定。任何其它非字符串类型的值都将会触发一个警告。</p>
+      <p><span class="red">注意：</span>动态参数表达式有一些语法约束，因为某些字符，如空格和引号，放在HTML属性名里是无效的。变通的方法是使用没有空格或引号的表达式，或用计算属性替代这种复杂表达式。</p>
+      <div class="code">
+        <p>&#60;!-- 这会触发一个编译警告 --&#62;<br />
+          &#60;a v-bind:['foo' + bar]=&#34;value&#34;&#62; ... &#60;/a&#62;</p>
+      </div>
+      <p><span class="red">注意：</span>在DOM中使用模板时，还需要避免使用大写字符来命名键名，因为浏览器会把属性名全部强制转为小写。</p>
+      <div class="code">
+        <p>&#60;!--<br>/
+          在 DOM 中使用模板时这段代码会被转换为 `v-bind:[someattr]`。<br />
+          除非在实例中有一个名为“someattr”的 property，否则代码不会工作。<br />
+          --&#62;<br />
+          &#60;a v-bind:[someAttr]=&#34;value&#34;&#62; ... &#60;/a&#62;</p>
+      </div>
+      <h2>修饰符</h2>
+      <p>修饰符(modifier)是以半角句号.指明的特殊后缀，用于指出一个指令应该以特殊方式绑定。</p>
+      <p>如，.prevent修饰符告诉v-on指令对于触发的事件调用event.preventDefault()：</p>
+      <p>&#60;form v-on:submit.prevent=&#34;onSubmit&#34;&#62;...&#60;/form&#62;</p>
+      <h2>缩写</h2>
+      <p>v- 前缀作为一种视觉提示，用来识别模板中 Vue 特定的 attribute。当你在使用 Vue.js 为现有标签添加动态行为 (dynamic behavior) 时，v- 前缀很有帮助</p>
+      <h3>v-bind缩写==>冒号（:）</h3>
+      <div class="code">
+        &#60;!-- 完整语法 --&#62;<br />
+        &#60;a v-bind:href=&#34;url&#34;&#62;...&#60;/a&#62;<br />
+        <br />
+        &#60;!-- 缩写 --&#62;<br />
+        &#60;a :href=&#34;url&#34;&#62;...&#60;/a&#62;<br />
+        <br />
+        &#60;!-- 动态参数的缩写 (2.6.0+) --&#62;<br />
+        &#60;a :[key]=&#34;url&#34;&#62; ... &#60;/a&#62;<br />
+      </div>
+      <h3>v-on缩写==>邮箱号（@）</h3>
+      <div class="code">
+        &#60;!-- 完整语法 --&#62;<br />
+        &#60;a v-on:click=&#34;doSomething&#34;&#62;...&#60;/a&#62;<br />
+        <br />
+        &#60;!-- 缩写 --&#62;<br />
+        &#60;a @click=&#34;doSomething&#34;&#62;...&#60;/a&#62;<br />
+        <br />
+        &#60;!-- 动态参数的缩写 (2.6.0+) --&#62;<br />
+        &#60;a @[event]=&#34;doSomething&#34;&#62; ... &#60;/a&#62;<br />
+      </div>
     </div>
     <br />
   </div>
@@ -144,7 +190,7 @@ export default {
   name: 'VueBasic1',
   data() {
     return {
-      title: 'Vue基础--简介、基础语法',
+      title: 'Vue基础--简介、实例、模板语法',
       text: 'Hello Vue!',
       bindTitle: '页面加载于' + new Date().toLocaleString(),
       seen: true,
