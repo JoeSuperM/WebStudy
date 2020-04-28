@@ -42,6 +42,11 @@ import VueBasic1 from '@/components/vue/VueBasic1'
 import VueBasic2 from '@/components/vue/VueBasic2'
 import VueBasic3 from '@/components/vue/VueBasic3'
 import VueBasic4 from '@/components/vue/VueBasic4'
+import VueBasic5 from '@/components/vue/VueBasic5'
+import VueBasic6 from '@/components/vue/VueBasic6'
+import VueBasic7 from '@/components/vue/VueBasic7'
+import VueBasic8 from '@/components/vue/VueBasic8'
+import VueBasic9 from '@/components/vue/VueBasic9'
 
 Vue.use(Router)
 
@@ -333,6 +338,46 @@ export default new Router({
       default: TopMain,
       left: LeftVue,
       right: VueBasic4
+    }
+  }, {
+    path: '/vue/basic5',
+    name: 'Vue-Basic-5',
+    components: {
+      default: TopMain,
+      left: LeftVue,
+      right: VueBasic5
+    }
+  }, {
+    path: '/vue/basic6',
+    name: 'Vue-Basic-6',
+    components: {
+      default: TopMain,
+      left: LeftVue,
+      right: VueBasic6
+    }
+  }, {
+    path: '/vue/basic7',
+    name: 'Vue-Basic-7',
+    components: {
+      default: TopMain,
+      left: LeftVue,
+      right: VueBasic7
+    }
+  }, {
+    path: '/vue/basic8',
+    name: 'Vue-Basic-8',
+    components: {
+      default: TopMain,
+      left: LeftVue,
+      right: VueBasic8
+    }
+  }, {
+    path: '/vue/basic9',
+    name: 'Vue-Basic-9',
+    components: {
+      default: TopMain,
+      left: LeftVue,
+      right: VueBasic9
     }
   }]
 })
