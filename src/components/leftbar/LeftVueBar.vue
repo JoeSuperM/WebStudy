@@ -29,6 +29,9 @@
       <li>
         <router-link :to="{name:'Vue-Basic-9'}">过渡与动画</router-link>
       </li>
+      <li>
+        <router-link :to="{name:'Vue-Basic-10'}">Ajax网络请求</router-link>
+      </li>
     </ul>
   </div>
 </template>

@@ -37,6 +37,10 @@ import CssBasic14 from '@/components/css/CssBasic14'
 import CssBasic15 from '@/components/css/CssBasic15'
 
 import LeftJavaScript from '@/components/leftbar/LeftJavaScriptBar'
+import JsBasic1 from '@/components/javascript/JsBasic1'
+import JsBasic2 from '@/components/javascript/JsBasic2'
+import JsBasic3 from '@/components/javascript/JsBasic3'
+
 import LeftVue from '@/components/leftbar/LeftVueBar'
 import VueBasic1 from '@/components/vue/VueBasic1'
 import VueBasic2 from '@/components/vue/VueBasic2'
@@ -47,6 +51,7 @@ import VueBasic6 from '@/components/vue/VueBasic6'
 import VueBasic7 from '@/components/vue/VueBasic7'
 import VueBasic8 from '@/components/vue/VueBasic8'
 import VueBasic9 from '@/components/vue/VueBasic9'
+import VueBasic10 from '@/components/vue/VueBasic10'
 
 Vue.use(Router)
 
@@ -292,12 +297,36 @@ export default new Router({
       right: CssBasic15
     }
   }, {
-    path: '/javaScript',
+    path: '/js',
     name: 'JavaScript',
     components: {
       default: TopMain,
       left: LeftJavaScript,
       right: Welcome
+    }
+  }, {
+    path: '/js/basic1',
+    name: 'Js-Basic-1',
+    components: {
+      default: TopMain,
+      left: LeftJavaScript,
+      right: JsBasic1
+    }
+  }, {
+    path: '/js/basic2',
+    name: 'Js-Basic-2',
+    components: {
+      default: TopMain,
+      left: LeftJavaScript,
+      right: JsBasic2
+    }
+  }, {
+    path: '/js/basic3',
+    name: 'Js-Basic-3',
+    components: {
+      default: TopMain,
+      left: LeftJavaScript,
+      right: JsBasic3
     }
   }, {
     path: '/vue',
@@ -378,6 +407,14 @@ export default new Router({
       default: TopMain,
       left: LeftVue,
       right: VueBasic9
+    }
+  }, {
+    path: '/vue/basic10',
+    name: 'Vue-Basic-10',
+    components: {
+      default: TopMain,
+      left: LeftVue,
+      right: VueBasic10
     }
   }]
 })

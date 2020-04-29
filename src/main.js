@@ -11,6 +11,14 @@ Vue.config.productionTip = false
 import animated from 'animate.css'
 Vue.use(animated)
 
+//导入网络请求框架Ajax
+// npm install axios --save安装，再引入
+import axios from 'axios';
+import api from './api/axios.js';
+//网络请求
+Vue.prototype.$api = api;
+Vue.prototype.$axios = axios;
+
 // Load the full build.
 var _ = require('lodash');
 // Load the core build.
