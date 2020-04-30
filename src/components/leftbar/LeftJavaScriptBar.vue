@@ -9,7 +9,19 @@
         <router-link :to="{name:'Js-Basic-2'}">函数、对象、事件、字符串</router-link>
       </li>
       <li>
-        <router-link :to="{name:'Js-Basic-3'}">数字、数组、日期</router-link>
+        <router-link :to="{name:'Js-Basic-3'}">数字、数组与方法</router-link>
+      </li>
+      <li>
+        <router-link :to="{name:'Js-Basic-4'}">日期格式、获取与设置、Math</router-link>
+      </li>
+      <li>
+        <router-link :to="{name:'Js-Basic-5'}">逻辑、比较、条件、类型转换</router-link>
+      </li>
+      <li>
+        <router-link :to="{name:'Js-Basic-6'}">位运算符、正则表达式、异常</router-link>
+      </li>
+      <li>
+        <router-link :to="{name:'Js-Basic-7'}">作用域、严格模式、this关键字</router-link>
       </li>
     </ul>
   </div>
