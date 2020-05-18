@@ -108,7 +108,48 @@
           });
         </pre>
       </div>
-      <h1>三、Class与Style绑定</h1>
+      <h1>三、过滤器</h1>
+      <p>Vue允许自定义过滤器，通过管道符指示，格式如下</p>
+      <div class="code">
+        &#60;!-- 在两个大括号中 --&#62;<br />
+        { { message | capitalize } }<br />
+        <br />
+        &#60;!-- 在 v-bind 指令中 --&#62;<br />
+        &#60;div v-bind:id="rawId | formatId"/&#62;<br />
+        <br />
+        &#60;!-- 过滤器可以串联 --&#62;<br />
+        { { message | filterA | filterB } }<br />
+        <br />
+        &#60;!-- 过滤器是JavaScript函数，因此可以接受参数 --&#62;<br />
+        { { message | filterA('arg1', arg2) } }<br />
+        <br />
+        //message 是第一个参数，字符串 'arg1' 将传给过滤器作为第二个参数，arg2表达式的值将被求值然后传给过滤器作为第三个参数。
+      </div>
+      <h3>演示代码</h3>
+      <div class="code">
+        <pre>
+          &#60;div id="app"&#62;
+            { { message | capitalize } }
+          &#60;/div&#62;
+          &#60;script&#62;
+            new Vue({
+              el: '#app',
+              data: {
+                message: 'runoob'
+              },
+              <span class="red">filters:</span> {
+                capitalize: function (value) {
+                  if (!value) return ''
+                  value = value.toString()
+                  return value.charAt(0).toUpperCase() + value.slice(1)
+                }
+              }
+            })
+          &#60;/script&#62;
+        </pre>
+        <p><span class="red">注意：</span>过滤器可以接收多个表达式，{ {msg1,msg2 | capitalize('param')} },<br />capitalize定义的时候需定义三个参数（capitalize: function (v1，v2, v3){}）。</p>
+      </div>
+      <h1>四、Class与Style绑定</h1>
       <p>将v-bind用于class和style时，Vue.js做了专门的增强。表达式结果的类型除了字符串之外，还可以是对象或数组。</p>
       <h2>绑定HTML Class</h2>
       <h3>对象语法、v-bind:class="{attr:value, attr:value}"</h3>

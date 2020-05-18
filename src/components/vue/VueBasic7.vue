@@ -232,6 +232,90 @@
       <h3>带有slot-scope属性的作用域插槽</h3>
       <p>slot-scope声明了被接收的prop对象会作为slotProps变量存在于template作用域中。</p>
       <p>&#60;template slot="default" slot-scope="slotProps"&#62;</p>
+      <h1>三、自定义指令</h1>
+      <p>除了默认设置的核心指令(v-model和v-show), Vue也允许使用directives选项来注册局部自定义指令。</p>
+      <div class="code">
+        <h3>创建自定义指令</h3>
+        <pre>
+          // 创建根实例
+          new Vue({
+            el: '#app',
+            <span class="red">directives: </span>{
+              // 注册一个局部的自定义指令 v-focus
+              focus: {
+                // 指令的定义
+                inserted: function (el) {
+                  // 聚焦元素
+                  el.focus()
+                }
+              }
+            }
+          })
+        </pre>
+        <h3>使用方法</h3>
+        &#60;p&#62;页面载入时，input 元素自动获取焦点：&#60;/p&#62;<br />
+        &#60;input v-focus&#62;<br />
+        <p>页面载入时，input 元素自动获取焦点：</p>
+        <input v-focus>
+      </div>
+      <h2>钩子</h2>
+      <h3>钩子函数</h3>
+      <ul>
+        <li v-for="hookFuc in hookFucs">{{hookFuc}}</li>
+      </ul>
+      <h3>钩子函数参数</h3>
+      <ul>
+        <li>el: 指令所绑定的元素，可以用来直接操作 DOM 。</li>
+        <li>binding: 一个对象，包含以下属性：
+          <ul>
+            <li>name: 指令名，不包括 v- 前缀。</li>
+            <li>value: 指令的绑定值， 例如： v-my-directive="1 + 1", value 的值是 2。</li>
+            <li>oldValue: 指令绑定的前一个值，仅在 update 和 componentUpdated 钩子中可用。无论值是否改变都可用。</li>
+            <li>expression: 绑定值的表达式或变量名。 例如 v-my-directive="1 + 1" ， expression 的值是 "1 + 1"。</li>
+            <li>arg: 传给指令的参数。例如 v-my-directive:foo， arg 的值是 "foo"。</li>
+            <li>modifiers: 一个包含修饰符的对象。 例如： v-my-directive.foo.bar, 修饰符对象 modifiers 的值是 { foo: true, bar: true }。</li>
+          </ul>
+        </li>
+        <li>vnode: Vue 编译生成的虚拟节点。</li>
+        <li>oldVnode: 上一个虚拟节点，仅在 update 和 componentUpdated 钩子中可用。</li>
+      </ul>
+      <div class="code">
+        <h3>JS代码</h3>
+        <pre>
+          Vue.directive('joe', {
+            bind: function (el, binding, vnode) {
+              var s = JSON.stringify
+              el.innerHTML =
+                'name: '       + s(binding.name) + '&#60;br&#62;' +
+                'value: '      + s(binding.value) + '&#60;br&#62;' +
+                'expression: ' + s(binding.expression) + '&#60;br&#62;' +
+                'argument: '   + s(binding.arg) + '&#60;br&#62;' +
+                'modifiers: '  + s(binding.modifiers) + '&#60;br&#62;' +
+                'vnode keys: ' + Object.keys(vnode).join(', ')
+            }
+          })
+          new Vue({
+            el: '#app',
+            data: {
+              message: '学习教程!'
+            }
+          })
+        </pre>
+        <h3>演示效果</h3>
+        <div v-joe:hello.a.b="message" />
+      </div>
+      <h3>简写指令钩子函数</h3>
+      <div class="code">
+        <pre>
+          &#60;div v-runoob="{ color: 'green', text: '菜鸟教程!' }"/&#62;
+          <br/>
+          Vue.directive('yrm', function (el, binding) {
+              // 简写方式设置文本及背景颜色
+              el.innerHTML = binding.value.text
+              el.style.backgroundColor = binding.value.color
+          })
+        </pre>
+      </div>
     </div>
     <br />
   </div>
@@ -246,9 +330,39 @@ export default {
   data() {
     return {
       title: 'Vue基础--自定义事件，插槽',
+      hookFucs: [
+        "bind: 只调用一次，指令第一次绑定到元素时调用，用这个钩子函数可以定义一个在绑定时执行一次的初始化动作。",
+        "inserted: 被绑定元素插入父节点时调用（父节点存在即可调用，不必存在于 document 中）。",
+        "update: 被绑定元素所在的模板更新时调用，而不论绑定值是否变化。通过比较更新前后的绑定值，可以忽略不必要的模板更新。",
+        "omponentUpdated: 被绑定元素所在模板完成一次更新周期时调用。",
+        "unbind: 只调用一次， 指令与元素解绑时调用。"
+      ],
+      message: '学习教程!'
     }
   },
-  methods: {}
+  methods: {},
+  directives: {
+    // 注册一个局部的自定义指令 v-focus
+    focus: {
+      // 指令的定义
+      inserted: function(el) {
+        // 聚焦元素
+        el.focus()
+      }
+    },
+    joe: {
+      bind: function(el, binding, vnode) {
+        var s = JSON.stringify
+        el.innerHTML =
+          'name: ' + s(binding.name) + '<br>' +
+          'value: ' + s(binding.value) + '<br>' +
+          'expression: ' + s(binding.expression) + '<br>' +
+          'argument: ' + s(binding.arg) + '<br>' +
+          'modifiers: ' + s(binding.modifiers) + '<br>' +
+          'vnode keys: ' + Object.keys(vnode).join(', ')
+      }
+    }
+  }
 }
 
 </script>

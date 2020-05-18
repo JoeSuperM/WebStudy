@@ -1,12 +1,12 @@
-# web_study
+# WebStudy
 
-> A Vue.js project
+一个使用npm+webpack+vue框架学习的演示项目。
 
 ## Build Setup
 
 ``` bash
 # install dependencies
-npm install
+cnpm install
 
 # serve with hot reload at localhost:8080
 npm run dev
