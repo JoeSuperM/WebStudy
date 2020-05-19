@@ -21,7 +21,7 @@
         <router-link :to="{name:'Vue-Basic-6'}">组件注册、Prop类型与验证</router-link>
       </li>
       <li>
-        <router-link :to="{name:'Vue-Basic-7'}">自定义事件、插槽</router-link>
+        <router-link :to="{name:'Vue-Basic-7'}">自定义事件、自定义指令，插槽</router-link>
       </li>
       <li>
         <router-link :to="{name:'Vue-Basic-8'}">动态与异步组件，边界情况</router-link>
@@ -31,6 +31,9 @@
       </li>
       <li>
         <router-link :to="{name:'Vue-Basic-10'}">Ajax网络请求</router-link>
+      </li>
+      <li>
+        <router-link :to="{name:'Vue-Basic-11'}">Vue路由配置</router-link>
       </li>
     </ul>
   </div>
