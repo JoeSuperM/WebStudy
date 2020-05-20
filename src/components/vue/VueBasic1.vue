@@ -53,6 +53,14 @@
         <p>new Vue({el:'#app', data:obj})</p>
         <p>后续修改obj.foo，页面视图不会更新</p>
       </div>
+      <h3>动态添加与删除属性</h3>
+      <p>Vue 不允许在已经创建的实例上动态添加新的<span class="red">根级响应式属性</span>。因为Vue不能检测到对象属性的添加或删除，最好的方式就是在初始化实例前声明根级响应式属性，哪怕只是一个空值。</p>
+      <p>如果我们需要在运行过程中实现属性的添加或删除，则可以使用全局<b>Vue.set和Vue.delete</b>方法。</p>
+      <h4>Vue.set(target[对象或数组], key[字符串或数字], value[任何类型])==>添加动态属性</h4>
+      <p>vm.data.prop = "1";==>添加了prop属性，但是其get/set方法不可用</p>
+      <p>Vue.set(data, 'prop', 1);==>添加了Prop属性，同时get/set方法可用</p>
+      <h4>Vue.delete(taget, key)==>删除动态添加的属性</h4>
+      <p>Vue.delete(data, 'prop');==>删除动态添加的prop属性，get/set方法也被删除</p>
       <h2>实例属性和方法</h2>
       <p>它们都有前缀$，以便与用户定义的属性区分开来。</p>
       <div class="code">

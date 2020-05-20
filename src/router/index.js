@@ -57,6 +57,7 @@ import VueBasic8 from '@/components/vue/VueBasic8'
 import VueBasic9 from '@/components/vue/VueBasic9'
 import VueBasic10 from '@/components/vue/VueBasic10'
 import VueBasic11 from '@/components/vue/VueBasic11'
+import VueBasic12 from '@/components/vue/VueBasic12'
 
 Vue.use(Router)
 
@@ -460,6 +461,14 @@ export default new Router({
       default: TopMain,
       left: LeftVue,
       right: VueBasic11
+    }
+  }, {
+    path: '/vue/basic12',
+    name: 'Vue-Basic-12',
+    components: {
+      default: TopMain,
+      left: LeftVue,
+      right: VueBasic12
     }
   }]
 })

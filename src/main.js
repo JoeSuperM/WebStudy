@@ -10,6 +10,9 @@ Vue.config.productionTip = false
 // npm install animate.css --save安装，再引入
 import animated from 'animate.css'
 Vue.use(animated)
+//导入网络插件框架vue-resource
+import VueResource from 'vue-resource'
+Vue.use(VueResource)
 
 //导入网络请求框架Ajax
 // npm install axios --save安装，再引入
