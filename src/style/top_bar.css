@@ -2,7 +2,7 @@
 * @Author: zhouchao
 * @Date:   2020-04-22 16:12:14
 * @Last Modified by:   zhouchao
-* @Last Modified time: 2020-04-22 16:13:28
+* @Last Modified time: 2020-05-21 17:04:32
 */
 
 /*顶部列表栏目的导航栏*/
@@ -11,10 +11,11 @@
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #bebebe;
+  background-color: #333333;
   border-style: dashed;
   border-color: #0000FF;
   border-width: thin;
+  font-size: 1.25rem;
 }
 
 #h_ul li {
@@ -27,11 +28,11 @@
   width: 150px;
   font-weight: bold;
   color: #FFFFFF;
-  background-color: #bebebe;
+  background-color: black;
   text-align: center;
-  padding: 20px;
+  padding: 18px;
   text-decoration: none;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 #h_ul a:hover,

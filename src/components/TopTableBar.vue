@@ -32,9 +32,14 @@
   background-image: url('../assets/page_top.jpg');
   background-repeat: repeat;
   background-attachment: scroll;
-  padding-top: 50px;
+  padding-top: 35px;
+  padding-bottom: 20px;
 }
 
+h1{
+  color: blue;
+  font-size: 2.5rem;
+}
 
 </style>
 <script type="text/javascript">
