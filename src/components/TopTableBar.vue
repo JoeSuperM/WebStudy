@@ -10,12 +10,15 @@
         <li>
           <router-link :to="{name:'HTML'}">HTML</router-link>
         </li>
+        <li class="divide" />
         <li>
           <router-link :to="{name:'CSS'}">CSS</router-link>
         </li>
+        <li class="divide" />
         <li>
           <router-link :to="{name:'JavaScript'}">JavaScript</router-link>
         </li>
+        <li class="divide" />
         <li>
           <router-link :to="{name:'Vue'}">Vue</router-link>
         </li>

@@ -2,7 +2,7 @@
 * @Author: zhouchao
 * @Date:   2020-04-22 16:12:14
 * @Last Modified by:   zhouchao
-* @Last Modified time: 2020-05-21 17:04:32
+* @Last Modified time: 2020-05-21 17:42:12
 */
 
 /*顶部列表栏目的导航栏*/
@@ -10,6 +10,7 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
+  height: 60px;
   overflow: hidden;
   background-color: #333333;
   border-style: dashed;
@@ -38,6 +39,12 @@
 #h_ul a:hover,
 #h_ul a:active {
   background-color: #00CC00;
+}
+
+.divide {
+  width: 1px;
+  height: 100%;
+  background-color: 333333;
 }
 
 /*顶部标题链接到欢迎页*/
