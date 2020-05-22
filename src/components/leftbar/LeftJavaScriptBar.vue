@@ -23,6 +23,12 @@
       <li>
         <router-link :to="{name:'Js-Basic-7'}" active-class="left_active_link">作用域、严格模式、this关键字</router-link>
       </li>
+      <li>
+        <router-link :to="{name:'Js-Basic-8'}" active-class="left_active_link">Json、void、代码规范</router-link>
+      </li>
+      <li>
+        <router-link :to="{name:'Js-Basic-9'}" active-class="left_active_link">JavaScript函数</router-link>
+      </li>
     </ul>
   </div>
 </template>
