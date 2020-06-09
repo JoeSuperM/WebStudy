@@ -2,7 +2,7 @@
 * @Author: zhouchao
 * @Date:   2020-04-22 16:12:14
 * @Last Modified by:   zhouchao
-* @Last Modified time: 2020-05-21 17:42:12
+* @Last Modified time: 2020-06-09 11:34:39
 */
 
 /*顶部列表栏目的导航栏*/
@@ -21,6 +21,13 @@
 
 #h_ul li {
   float: left;
+  border-right: 1px solid #ddd;
+}
+
+/*最后一个元素和倒数第二个*/
+#h_ul li:last-child,
+#h_ul li:nth-last-child(2) {
+  border-right: none;
 }
 
 #h_ul a:link,
@@ -44,7 +51,7 @@
 .divide {
   width: 1px;
   height: 100%;
-  background-color: 333333;
+  background-color: transparent;
 }
 
 /*顶部标题链接到欢迎页*/

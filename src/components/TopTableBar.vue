@@ -8,19 +8,19 @@
     <div id="top">
       <ul id="h_ul">
         <li>
-          <router-link :to="{name:'HTML'}">HTML</router-link>
+          <router-link :to="{name:'HTML-Basic-1'}">HTML</router-link>
         </li>
-        <li class="divide" />
         <li>
-          <router-link :to="{name:'CSS'}">CSS</router-link>
+          <router-link :to="{name:'CSS-Basic-1'}">CSS</router-link>
         </li>
-        <li class="divide" />
         <li>
-          <router-link :to="{name:'JavaScript'}">JavaScript</router-link>
+          <router-link :to="{name:'Js-Basic-1'}">JavaScript</router-link>
         </li>
-        <li class="divide" />
         <li>
-          <router-link :to="{name:'Vue'}">Vue</router-link>
+          <router-link :to="{name:'Vue-Basic-1'}">Vue</router-link>
+        </li>
+        <li style="float:right;">
+          <router-link :to="{name:'TopMain'}" style="background-color:#00CC00;">About Us</router-link>
         </li>
       </ul>
     </div>

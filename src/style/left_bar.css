@@ -2,7 +2,7 @@
 * @Author: zhouchao
 * @Date:   2020-04-16 11:23:26
 * @Last Modified by:   zhouchao
-* @Last Modified time: 2020-05-21 16:36:10
+* @Last Modified time: 2020-06-09 11:39:30
 */
 .left {
   height: 100%
@@ -32,6 +32,11 @@
   height: 100%;
   background-color: #333333;
   font-size: 1.0rem;
+}
+
+/*加入分割线*/
+#v_ul li {
+  border-bottom: 1px solid #2A2A2A;
 }
 
 #v_ul a:link,

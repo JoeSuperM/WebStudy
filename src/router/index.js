@@ -26,7 +26,10 @@ import CssBasic3 from '@/components/css/CssBasic3'
 import CssBasic4 from '@/components/css/CssBasic4'
 import CssBasic5 from '@/components/css/CssBasic5'
 import CssBasic6 from '@/components/css/CssBasic6'
-import CssBasic7 from '@/components/css/CssBasic7'
+import CssBasic7A from '@/components/css/CssBasic7A'
+import CssBasic7B from '@/components/css/CssBasic7B'
+import CssBasic7C from '@/components/css/CssBasic7C'
+
 import CssBasic8 from '@/components/css/CssBasic8'
 import CssBasic9 from '@/components/css/CssBasic9'
 import CssBasic10 from '@/components/css/CssBasic10'
@@ -67,14 +70,6 @@ export default new Router({
   routes: [{
     path: '/',
     name: 'TopMain',
-    components: {
-      default: TopMain,
-      left: LeftHtml,
-      right: Welcome
-    }
-  }, {
-    path: '/html',
-    name: 'HTML',
     components: {
       default: TopMain,
       left: LeftHtml,
@@ -177,14 +172,6 @@ export default new Router({
       right: HtmlBasic12
     }
   }, {
-    path: '/css',
-    name: 'CSS',
-    components: {
-      default: TopMain,
-      left: LeftCSS,
-      right: Welcome
-    }
-  }, {
     path: '/css/basic1',
     name: 'CSS-Basic-1',
     components: {
@@ -233,12 +220,28 @@ export default new Router({
       right: CssBasic6
     }
   }, {
-    path: '/css/basic7',
-    name: 'CSS-Basic-7',
+    path: '/css/basic7/a',
+    name: 'CSS-Basic-7A',
     components: {
       default: TopMain,
       left: LeftCSS,
-      right: CssBasic7
+      right: CssBasic7A
+    }
+  }, {
+    path: '/css/basic7/b',
+    name: 'CSS-Basic-7B',
+    components: {
+      default: TopMain,
+      left: LeftCSS,
+      right: CssBasic7B
+    }
+  }, {
+    path: '/css/basic7/c',
+    name: 'CSS-Basic-7C',
+    components: {
+      default: TopMain,
+      left: LeftCSS,
+      right: CssBasic7C
     }
   }, {
     path: '/css/basic8',
@@ -303,14 +306,6 @@ export default new Router({
       default: TopMain,
       left: LeftCSS,
       right: CssBasic15
-    }
-  }, {
-    path: '/js',
-    name: 'JavaScript',
-    components: {
-      default: TopMain,
-      left: LeftJavaScript,
-      right: Welcome
     }
   }, {
     path: '/js/basic1',
@@ -383,14 +378,6 @@ export default new Router({
       default: TopMain,
       left: LeftJavaScript,
       right: JsBasic9
-    }
-  }, {
-    path: '/vue',
-    name: 'Vue',
-    components: {
-      default: TopMain,
-      left: LeftVue,
-      right: Welcome
     }
   }, {
     path: '/vue/basic1',
