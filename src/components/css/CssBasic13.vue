@@ -49,7 +49,7 @@
           <div id="caption"></div>
         </div>
       </div>
-      <h1>二、CSS3之按钮效果</h1>
+      <h1 id="css-button-demo">二、CSS3之按钮效果</h1>
       <div class="code">
         <h3>各种类型的按钮</h3>
         <div>

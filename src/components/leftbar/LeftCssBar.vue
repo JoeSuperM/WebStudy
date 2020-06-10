@@ -24,10 +24,10 @@
         <router-link :to="{name:'CSS-Basic-7A'}" active-class="left_active_link">对齐、尺寸、分类、光标</router-link>
       </li>
       <li>
-        <router-link :to="{name:'CSS-Basic-7B'}" active-class="left_active_link">导航、下拉，提示</router-link>
+        <router-link :to="{name:'CSS-Basic-7B'}" active-class="left_active_link">导航、下拉，提示，计数器</router-link>
       </li>
       <li>
-        <router-link :to="{name:'CSS-Basic-7C'}" active-class="left_active_link">透明度、媒介</router-link>
+        <router-link :to="{name:'CSS-Basic-7C'}" active-class="left_active_link">透明度、媒介、表单实例</router-link>
       </li>
       <li>
         <router-link :to="{name:'CSS-Basic-8'}" active-class="left_active_link">CSS3-边框、背景、渐变</router-link>

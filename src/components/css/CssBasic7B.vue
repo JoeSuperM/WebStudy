@@ -46,8 +46,7 @@
         </div>
         <h3>3、下拉内容对齐方式</h3>
         <h4>float：left</h4>
-        <div class="btn-dropdown" style="float
-:left;">
+        <div class="btn-dropdown" style="float:left;">
           <button class="btn-dropitem">内容显示在左边</button>
           <div class="btn-dropdown-content" style="left:0;">
             <a href="#/css/basic7/a">下拉列表A</a>
@@ -129,6 +128,62 @@
         <h3>5、淡入淡出的效果</h3>
         <div class="bs-tooltip">鼠标移动到此处，提示文本在顶侧,有箭头,有效果
           <span class="bs-tooltip-text bs-tooltip-text-top bs-top-arrow bs-tooltip-transition">这是提示文本</span>
+        </div>
+      </div>
+      <h1>四、计数器</h1>
+      <p>CSS计数器通过一个变量来设置，根据规则递增变量。要使用CSS计数器，得先用counter-reset创建</p>
+      <ul type="dotted">
+        <li>counter-reset - 创建或者重置计数器</li>
+        <li>counter-increment - 递增变量</li>
+        <li>content - 插入生成的内容</li>
+        <li>counter() 或 counters() 函数 - 将计数器的值添加到元素</li>
+      </ul>
+      <h2>1、使用计数器自动编号</h2>
+      <div class="code">
+        <div class="counter-box">
+          <h3>HTML教程</h3>
+          <h3>CSS教程</h3>
+          <h3>JavaScript教程</h3>
+        </div>
+      </div>
+      <h2>2、嵌套计数器</h2>
+      <div class="code">
+        <div class="counter-box">
+          <h3>HTML教程</h3>
+          <h4>HTML-基础</h4>
+          <h4>HTML-进阶</h4>
+          <h4>HTML-高级</h4>
+          <h3>CSS教程</h3>
+          <h4>CSS-基础</h4>
+          <h4>CSS-高级</h4>
+          <h3>JavaScript教程</h3>
+          <h4>JavaScript-基础</h4>
+          <h4>JavaScript-进阶</h4>
+          <h4>JavaScript-高级</h4>
+        </div>
+      </div>
+      <h2>3、列表计数器</h2>
+      <div class="code">
+        <div class="list-box">
+          <ol>
+            <li>第一章</li>
+            <li>第二章
+              <ol>
+                <li>第二章第一节</li>
+                <li>第二章第二节</li>
+                <li>第二章第三节
+                  <ol>
+                    <li>第二章第三节第一段</li>
+                    <li>第二章第三节第二段</li>
+                    <li>第二章第三节第三段</li>
+                  </ol>
+                </li>
+                <li>第二章第四节</li>
+              </ol>
+            </li>
+            <li>第三章</li>
+            <li>第四章</li>
+          </ol>
         </div>
       </div>
     </div>
@@ -355,13 +410,42 @@
   transition: opacity 2s;
 }
 
+div.counter-box {
+  counter-reset: section;
+}
+
+div.counter-box h4 {
+  counter-reset: subsection;
+}
+
+div.counter-box h3::before {
+  counter-increment: section;
+  content: "Section "counter(section)"、";
+}
+
+div.counter-box h4::before {
+  counter-increment: subsection;
+  content: "Sub "counter(section)"."counter(subsection)" ";
+}
+
+div.list-box ol {
+  counter-reset: article;
+  list-style-type: none;
+  font-size: 20px;
+}
+
+div.list-box li::before {
+  counter-increment: article;
+  content: counters(article, ".") " ";
+}
+
 </style>
 <script>
 export default {
   name: 'CssBasic7B',
   data() {
     return {
-      title: 'CSS基础--导航、下拉、提示'
+      title: 'CSS基础--导航、下拉、提示工具，计数器'
     }
   }
 }
