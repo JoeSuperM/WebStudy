@@ -96,6 +96,66 @@
       <p>大多 Web 服务器 (Apache, Unix) 对大小写敏感： london.jpg 不能通过 London.jpg 访问。<br />
         其他 Web 服务器 (Microsoft, IIS) 对大小写不敏感： london.jpg 可以通过 London.jpg 或 london.jpg 访问。<br />
         你必须保持统一的风格，我们建议统一使用小写的文件名。</p>
+      <h1>三、Input的验证API</h1>
+      <div class="code">
+        <h3>约束验证 DOM 方法</h3>
+        <dl>
+          <dt>checkValidity()</dt>
+          <dd>如果 input 元素中的数据是合法的返回 true，否则返回 false。</dd>
+          <dt>setCustomValidity()</dt>
+          <dd>设置 input 元素的 validationMessage 属性，用于自定义错误提示信息的方法。<br />
+            使用 setCustomValidity 设置了自定义提示后，validity.customError 就会变成true，则 checkValidity 总是会返回false。如果要重新判断需要取消自定义提示，方式如下：setCustomValidity('')、setCustomValidity(null)、setCustomValidity(undefined)</dd>
+        </dl>
+        <h3>约束验证 DOM 属性</h3>
+        <dl>
+          <dt>validity</dt>
+          <dd>布尔属性值，返回 input 输入值是否合法</dd>
+          <dt>validationMessage</dt>
+          <dd>浏览器错误提示信息</dd>
+          <dt>willValidate</dt>
+          <dd>指定 input 是否需要验证</dd>
+        </dl>
+        <h3>Validity 属性</h3>
+        <dl>
+          <dt>customError</dt>
+          <dd>设置为 true, 如果设置了自定义的 validity 信息。</dd>
+          <dt>patternMismatch</dt>
+          <dd>设置为 true, 如果元素的值不匹配它的模式属性。</dd>
+          <dt>rangeOverflow</dt>
+          <dd>设置为 true, 如果元素的值大于设置的最大值。</dd>
+          <dt>rangeUnderflow</dt>
+          <dd>设置为 true, 如果元素的值小于它的最小值。</dd>
+          <dt>stepMismatch</dt>
+          <dd>设置为 true, 如果元素的值不是按照规定的 step 属性设置。</dd>
+          <dt>tooLong</dt>
+          <dd>设置为 true, 如果元素的值超过了 maxLength 属性设置的长度。</dd>
+          <dt>typeMismatch</dt>
+          <dd>设置为 true, 如果元素的值不是预期相匹配的类型。</dd>
+          <dt>valueMissing</dt>
+          <dd>设置为 true，如果元素 (required 属性) 没有值。</dd>
+          <dt>valid</dt>
+          <dd>设置为 true，如果元素的值是合法的。</dd>
+        </dl>
+      </div>
+      <h2>验证实例</h2>
+      <div class="code">
+        <p>var inpObj1 = document.getElementById("id1");</p>
+        <p>inpObj1.checkValidity()<br />inpObj1.validity.rangeOverflow<br />
+          inpObj1.value<br />inpObj1.setCustomValidity(''); // 取消自定义提示的方式
+        </p>
+        <br />
+        <label>请输入数字【100,200】：</label>
+        <input type="number" width="200px" min="100" max="200" id="id1">
+        <button v-on:click="checkValidity1">验证</button>
+        <br />
+        <label>请输入数字【100,200】：</label>
+        <input type="number" name="value" min="100" max="200" id="id2">
+        <button v-on:click="checkValidity2">验证</button>
+        <br />
+        <label>请输入数字【100,~】：</label>
+        <input type="number" name="value" min="100" id="id3">
+        <button v-on:click="checkValidity3">验证</button>
+      </div>
     </div>
     <br />
   </div>
@@ -109,7 +169,7 @@ export default {
   name: 'JsBasic8',
   data() {
     return {
-      title: 'JavaScript基础--Json、void和代码规范等',
+      title: 'JavaScript基础--Json、void、验证API和代码规范等',
       json: '',
       textNone: '',
       textReplacerFun: '',
@@ -161,6 +221,44 @@ export default {
 
       this.textSpaceChar = JSON.stringify(str, null, '\t');
     },
+    checkValidity1: function() {
+      var inpObj1 = document.getElementById("id1");
+      if (!inpObj1.checkValidity()) {
+        alert("验证失败：" + inpObj1.validationMessage);
+      } else {
+        alert("验证成功！");
+      }
+    },
+    checkValidity2: function() {
+      var inpObj2 = document.getElementById("id2");
+      console.log(inpObj2.validity);
+      if (inpObj2.validity.rangeOverflow) {
+        alert("验证失败：输入的值太大");
+      } else if (inpObj2.validity.rangeUnderflow) {
+        alert("验证失败：输入的值太小");
+      } else if (inpObj2.validity.tooLong) {
+        alert("验证失败：输入的值超过最大长度");
+      } else if (inpObj2.validity.typeMismatch || inpObj2.validity.badInput) {
+        alert("验证失败：输入的值不是预期相匹配的类型");
+      } else {
+        alert("验证成功！");
+      }
+
+    },
+    checkValidity3: function() {
+      var inpObj3 = document.getElementById("id3");
+      console.log(inpObj3.validity);
+      if (!this.isNumeric(inpObj3.value)) {
+        alert("验证失败：请输入数字");
+      } else if (inpObj3.validity.rangeUnderflow) {
+        alert("验证失败：输入的值太小");
+      } else {
+        alert("验证成功！");
+      }
+    },
+    isNumeric(n) { //判断输入是否为数字
+      return !isNaN(parseFloat(n)) && isFinite(n);
+    }
   }
 }
 

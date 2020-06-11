@@ -33,7 +33,7 @@
         <router-link :to="{name:'HTML-Basic-10'}" active-class="left_active_link">H5图形、媒体</router-link>
       </li>
       <li>
-        <router-link :to="{name:'HTML-Basic-11'}" active-class="left_active_link">H5拖放、Web存储</router-link>
+        <router-link :to="{name:'HTML-Basic-11'}" active-class="left_active_link">H5拖放、Web存储、SQL数据库</router-link>
       </li>
       <li>
         <router-link :to="{name:'HTML-Basic-12'}" active-class="left_active_link">H5应用缓存、Workers、SSE</router-link>
