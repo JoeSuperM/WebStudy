@@ -48,6 +48,20 @@
         <li>window.resizeTo() - 调整当前窗口的尺寸</li>
       </ul>
       <h1>二、浏览器Screen信息</h1>
+      <p>window.screen 对象包含有关用户屏幕的信息。部分属性如下：</p>
+      <ul>
+        <li>screen.availWidth - 可用的屏幕宽度</li>
+        <li>screen.availHeight - 可用的屏幕高度</li>
+      </ul>
+      <h3>Window Screen 可用宽度</h3>
+      <p>screen.availWidth 属性返回访问者屏幕的宽度，以像素计，减去界面特性，比如窗口任务栏。</p>
+      <h3>Window Screen 可用高度</h3>
+      <p>screen.availHeight 属性返回访问者屏幕的高度，以像素计，减去界面特性，比如窗口任务栏。</p>
+      <div class="code">
+        <button v-on:click="getScreen">点击获取屏幕宽高</button>
+        <h3>当前屏幕信息：</h3>
+        <span v-html="screenHW" />
+      </div>
       <h1>三、浏览器Navigator信息</h1>
       <p>window.navigator 对象包含有关访问者浏览器的信息。</p>
       <p><span class="red">注意：</span>来自 navigator 对象的信息具有误导性，不应该被用于检测浏览器版本，这是因为：</p>
@@ -98,18 +112,25 @@ export default {
       title: 'JavaScript基础--Window、Screen、Navigator、Location',
       navigator: '',
       location: '',
-      browserHW: ''
+      browserHW: '',
+      screenHW: '',
     }
   },
   methods: {
     getNavigator: function() {
-      var txt = "<p>浏览器代号: " + navigator.appCodeName + "</p>";
-      txt += "<p>浏览器名称: " + navigator.appName + "</p>";
-      txt += "<p>浏览器版本: " + navigator.appVersion + "</p>";
-      txt += "<p>启用Cookies: " + navigator.cookieEnabled + "</p>";
-      txt += "<p>硬件平台: " + navigator.platform + "</p>";
-      txt += "<p>用户代理: " + navigator.userAgent + "</p>";
-      txt += "<p>用户代理语言: " + navigator.systemLanguage + "</p>";
+      var txt = "<p>浏览器代号(appCodeName): " + navigator.appCodeName + "</p>";
+      txt += "<p>浏览器名称(appName): " + navigator.appName + "</p>";
+      txt += "<p>浏览器版本(appVersion): " + navigator.appVersion + "</p>";
+      txt += "<p>启用Cookies(cookieEnabled): " + navigator.cookieEnabled + "</p>";
+      txt += "<p>硬件平台(platform): " + navigator.platform + "</p>";
+      txt += "<p>用户代理(userAgent): " + navigator.userAgent + "</p>";
+      txt += "<p>用户代理语言(systemLanguage): " + navigator.systemLanguage + "</p>";
+      txt += "<p>当前语言(language): " + navigator.language + "</p>";
+      txt += "<p>支持语言(languages): " + navigator.languages + "</p>";
+      txt += "<p>产品名称(product): " + navigator.product + "</p>";
+      txt += "<p>产品子名称(productSub): " + navigator.productSub + "</p>";
+      txt += "<p>产品厂商(vendor): " + navigator.vendor + "</p>";
+      console.log(navigator);
       this.navigator = txt;
     },
     getLocation: function() {
@@ -118,6 +139,9 @@ export default {
       txt += "<p>location.pathname  : " + location.pathname + "</p>";
       txt += "<p>location.port  : " + location.port + "</p>";
       txt += "<p>location.protocol   : " + location.protocol + "</p>";
+      txt += "<p>location.origin   : " + location.origin + "</p>";
+      txt += "<p>location.hash   : " + location.hash + "</p>";
+      console.log(location);
       this.location = txt;
     },
     loadNewDoc: function(assign) {
@@ -135,6 +159,17 @@ export default {
         document.documentElement.clientHeight ||
         document.body.clientHeight;
       this.browserHW = "浏览器window宽度: " + w + ", 高度: " + h + "。";
+    },
+    getScreen: function() {
+      var text = "<p>总宽度/高度: " + screen.width + "*" + screen.height + "</p>";
+      text += "<p>可用宽度/高度：" + screen.availWidth + "*" + screen.availHeight + "</p>";
+      text += "<p>可用起始像素（左）：" + screen.availLeft + "</p>";
+      text += "<p>可用起始像素（上）：" + screen.availTop + "</p>";
+      text += "<p>色彩深度：" + screen.colorDepth + "</p>";
+      text += "<p>色彩分辨率：" + screen.pixelDepth + "</p>";
+
+      console.log(screen);
+      this.screenHW = text;
     }
   }
 }

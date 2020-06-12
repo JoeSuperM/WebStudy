@@ -50,6 +50,7 @@ import JsBasic8 from '@/components/javascript/JsBasic8'
 import JsBasic9 from '@/components/javascript/JsBasic9'
 import JsBasic10 from '@/components/javascript/JsBasic10'
 import JsBasic11 from '@/components/javascript/JsBasic11'
+import JsBasic12 from '@/components/javascript/JsBasic12'
 
 import LeftVue from '@/components/leftbar/LeftVueBar'
 import VueBasic1 from '@/components/vue/VueBasic1'
@@ -395,6 +396,14 @@ export default new Router({
       default: TopMain,
       left: LeftJavaScript,
       right: JsBasic11
+    }
+  }, {
+    path: '/js/basic12',
+    name: 'Js-Basic-12',
+    components: {
+      default: TopMain,
+      left: LeftJavaScript,
+      right: JsBasic12
     }
   }, {
     path: '/vue/basic1',

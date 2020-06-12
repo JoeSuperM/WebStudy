@@ -30,10 +30,13 @@
         <router-link :to="{name:'Js-Basic-9'}" active-class="left_active_link">JavaScript函数</router-link>
       </li>
       <li>
-        <router-link :to="{name:'Js-Basic-10'}" active-class="left_active_link">JS-计时事件、弹窗提示</router-link>
+        <router-link :to="{name:'Js-Basic-10'}" active-class="left_active_link">JS-计时事件、弹窗提示、Cookie</router-link>
       </li>
       <li>
         <router-link :to="{name:'Js-Basic-11'}" active-class="left_active_link">JS-Window、Screen、Navigator、Location</router-link>
+      </li>
+      <li>
+        <router-link :to="{name:'Js-Basic-12'}" active-class="left_active_link">JavaScript有趣的实例</router-link>
       </li>
     </ul>
   </div>
